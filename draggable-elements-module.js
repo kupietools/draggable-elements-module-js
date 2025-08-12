@@ -1,4 +1,4 @@
-class kt_draggable_elements {
+class draggable_elements {
   constructor(config) {
     this.config = config;
     this.activeElement = null;
@@ -810,4 +810,4 @@ END old handlers */
     document.dispatchEvent(event);
   }
 }
-export default kt_draggable_elements;
+export default draggable_elements;
