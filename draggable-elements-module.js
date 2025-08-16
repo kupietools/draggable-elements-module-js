@@ -162,7 +162,7 @@ class draggable_elements {
       horizontal: { desc: "horizontally", class: "hdrag" },
       corners: { desc: "to any corner", class: "cdrag" }
     };
-
+    
     element.title =
       (element.title ? element.title + " - " : "") +
       "☝ Drag me " +
@@ -179,6 +179,8 @@ class draggable_elements {
         "ktwp-de-" + constraintDesc[config.constraint].class
       );
     }
+	  element.classList.add("element.classList.add("ktwp-de-draggableElement");
+	  if(config.noGlow) {element.classList.add("element.classList.add("ktwp-de-noGlow");}
     /* if I decide to make all children use move cursor, do this. const descendents = element.querySelectorAll("*"); /~ yes, I know how it's spelled. Ask Milo. ~/ */
 
     /* Going to try adding a child div to hold animations and effects so as not to overwrite existing fancy css stuff on draggable item's ::before and ::after. */ 
@@ -365,92 +367,8 @@ HOWEVER: The exception to this is the corner snap. Because this will "snap" to a
   }
 
   // --- New Touch Event Handlers ---
-  /* old handlers didn't actually work on mobile, something about preventDefault. Keeping around for now for reference, I want to compare and see what the actual problem was. 
-OLD_didnt_work_on_mobile_handleTouchStart(e) {
-        e.preventDefault(); // Prevent scrolling and zooming
-        const touch = e.touches[0];
-		
-		
-    // --- START CHANGES TO PREVENT TRIGGERING DRAG ON VANISHINGLY TINY TOUCHES, like can happen on mobile---
-    // Store the initial touch coordinates for threshold calculation
-   
-    this.touchStartX = touch.clientX;
-    this.touchStartY = touch.clientY;
-    // --- END CHANGES ---
-
-    // Simulate a mouse down event for reusability.
-    // This will set `this.dragStarted = false;` initially, which is what we want.
- 
-        this.handleMouseDown({
-            button: 0, // Left click
-            target: touch.target,
-            clientX: touch.clientX,
-            clientY: touch.clientY,
-            preventDefault: () => {} // Dummy preventDefault
-        });
-        const element = e.target.closest('[data-draggable]');
-       // no don't need it if (element) { element.classList.add('is-held-draggable'); } // Add this line for the visual indicator
-     
-    }
-
-    OLD_didnt_work_on_mobile_handleTouchMove(e) {
-        e.preventDefault(); // Prevent scrolling
-        if (!this.activeElement || !this.isDragging) return;
-        const touch = e.touches[0];
-		
-		
-		
-    // --- START CHANGES: ADD THESE LINES to prevent vanishingly small touches from triggering a drag, as can happen on mobile ---
-    // Calculate the distance moved from the initial touch point
-    const currentTouchX = touch.clientX;
-    const currentTouchY = touch.clientY;
-    const deltaX = Math.abs(currentTouchX - this.touchStartX);
-    const deltaY = Math.abs(currentTouchY - this.touchStartY);
-
-    // If the movement exceeds the threshold, only then set dragStarted and proceed with movement
-    if (deltaX > this.touchMovementThreshold || deltaY > this.touchMovementThreshold) {
-        this.dragStarted = true; // Mark as a drag
-    } else {
-        // If movement is below threshold, ensure dragStarted remains false for potential click
-        this.dragStarted = false;
-        return; // Don't process movement if below threshold
-    }
-    // --- END CHANGES ---
-
-    // Original logic that simulates a mouse move event, now only runs if dragStarted is true
-   
-        // Simulate a mouse move event
-        this.handleMouseMove({
-            clientX: touch.clientX,
-            clientY: touch.clientY,
-            movementX: touch.clientX - (this._lastTouchX || touch.clientX), // Estimate movementX
-            movementY: touch.clientY - (this._lastTouchY || touch.clientY), // Estimate movementY
-            preventDefault: () => {}
-        });
-        this._lastTouchX = touch.clientX;
-        this._lastTouchY = touch.clientY;
-    }
-
-    OLD_didnt_work_on_mobile_handleTouchEnd(e) {
-        if (!this.activeElement) return;
-        // Simulate a mouse up event
-        this.handleMouseUp({
-            clientX: this._lastTouchX,
-            clientY: this._lastTouchY,
-            preventDefault: () => {}
-        });
-        this._lastTouchX = null;
-        this._lastTouchY = null;
-
-         // Remove touch event listeners from the document
-         document.removeEventListener('touchmove', this.handleTouchMove.bind(this));
-         document.removeEventListener('touchend', this.handleTouchEnd.bind(this));
-         document.removeEventListener('touchcancel', this.handleTouchEnd.bind(this));
-        
-        // Ensure 'is-held-draggable' is removed on touch end
-   // no don't need it anymore:     if (this.activeElement) { this.activeElement.classList.remove('is-held-draggable');} 
-    }
-END old handlers */
+  /* old handlers didn't actually work on mobile, something about preventDefault. Check older versions for reference, someday I want to compare and see what the actual problem was. 
+ */
 
   handleTouchStart(e) {
     const touch = e.touches[0];
