@@ -180,11 +180,10 @@ class draggable_elements {
       );
     }
 	  element.classList.add("ktwp-de-draggableElement");
-	  if(config.noGlow) {element.classList.add("element.classList.add("ktwp-de-noGlow");}
+	  if(config.noGlow) {element.classList.add("ktwp-de-noGlow");}
     /* if I decide to make all children use move cursor, do this. const descendents = element.querySelectorAll("*"); /~ yes, I know how it's spelled. Ask Milo. ~/ */
 
-    /* Going to try adding a child div to hold animations and effects so as not to overwrite existing fancy css stuff on draggable item's ::before and ::after. */ 
-	  //console.log(config, config.hasOwnProperty("dragElement"));
+    //console.log(config, config.hasOwnProperty("dragElement"));
     if (
       (config.hasOwnProperty("dragElement") && config.dragElement != "") ||
       !config.hasOwnProperty("dragElement")
