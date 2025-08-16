@@ -111,7 +111,7 @@ class draggable_elements {
 
   setupDraggables() {
     //console.log('Setting up draggables:', this.config);
-	  const cssUrl = new URL(./draggable-elements.css, import.meta.url);
+	  const cssUrl = new URL("./draggable-elements.css", import.meta.url);
 	  const link = document.createElement('link');
 	  link.rel = 'stylesheet';
       link.href = cssUrl.href;
