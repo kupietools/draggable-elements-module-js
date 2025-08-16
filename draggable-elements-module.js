@@ -179,7 +179,7 @@ class draggable_elements {
         "ktwp-de-" + constraintDesc[config.constraint].class
       );
     }
-	  element.classList.add("element.classList.add("ktwp-de-draggableElement");
+	  element.classList.add("ktwp-de-draggableElement");
 	  if(config.noGlow) {element.classList.add("element.classList.add("ktwp-de-noGlow");}
     /* if I decide to make all children use move cursor, do this. const descendents = element.querySelectorAll("*"); /~ yes, I know how it's spelled. Ask Milo. ~/ */
 
