@@ -18,7 +18,16 @@
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path stroke=\"rgba(190,190,190,1)\" stroke-width=\".7\"  fill=\"rgba(0,0,0,0.3)\" d=\"M8.326 5.327 12.03 1l3.705 4.327h-1.853v4.349h-3.705V5.326zM15.736 18.734 12.03 23.06l-3.706-4.327h1.853v-4.348h3.705v4.348zM18.734 8.325l4.327 3.706-4.327 3.705v-1.853h-4.348v-3.705h4.348zM5.327 15.736 1 12.03l4.327-3.706v1.853h4.349v3.705H5.326z\"/></svg>');
 }
 
-.ktwp-de-effectsDiv{position:absolute !important; left:0 !important;top:0 !important;bottom:0 !important;right:0 !important;background:transparent !important;filter:none !important;backdropFilter:none !important;border-radius:inherit;}
+.ktwp-de-effectsDiv{
+	position:absolute !important; 
+	left:0 !important;
+	top:0 !important;
+	bottom:0 !important;
+	right:0 !important;
+	background:transparent !important;
+	filter:none !important;
+	backdropFilter:none !important;
+	border-radius:inherit;}
 
 .is-dragging .ktwp-de-effectsDiv::before {
 	opacity: .5;
