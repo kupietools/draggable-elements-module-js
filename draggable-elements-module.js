@@ -184,10 +184,8 @@ class draggable_elements {
     }
     /* if I decide to make all children use move cursor, do this. const descendents = element.querySelectorAll("*"); /~ yes, I know how it's spelled. Ask Milo. ~/ */
 
-    /* Going to try adding a child div to hold animations and effects so as not to overwrite existing fancy css stuff on draggable item's ::before and ::after. */ console.log(
-      config,
-      config.hasOwnProperty("dragElement")
-    );
+    /* Going to try adding a child div to hold animations and effects so as not to overwrite existing fancy css stuff on draggable item's ::before and ::after. */ 
+	  //console.log(config, config.hasOwnProperty("dragElement"));
     if (
       (config.hasOwnProperty("dragElement") && config.dragElement != "") ||
       !config.hasOwnProperty("dragElement")
@@ -195,14 +193,7 @@ class draggable_elements {
       const theDragElement = config.hasOwnProperty("dragElement")
         ? element.querySelector(config.dragElement)
         : element;
-      console.log(
-        "element",
-        element,
-        "theDragElement",
-        theDragElement,
-        "qs",
-        element.querySelector(config.dragElement)
-      );
+      //console.log("element", element, "theDragElement",theDragElement,"qs",element.querySelector(config.dragElement));
       const newDiv = document.createElement("div");
       newDiv.className = "ktwp-de-effectsDiv";
       theDragElement.prepend(newDiv);
