@@ -114,7 +114,7 @@ class draggable_elements {
 
 	  const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = './draggable-elements.css;
+  link.href = './draggable-elements.css';
   document.head.appendChild(link);
 
 
