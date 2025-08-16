@@ -23,7 +23,7 @@ class draggable_elements {
     // --- END CHANGES ---
 
     this.init();
-    this.start();
+    
   }
 
   init() {
@@ -112,6 +112,14 @@ class draggable_elements {
   setupDraggables() {
     //console.log('Setting up draggables:', this.config);
 
+	  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = './draggable-elements.css;
+  document.head.appendChild(link);
+
+
+
+
     this.config.forEach((item) => {
       const elements = document.querySelectorAll(item.selector);
       //console.log(`Found ${elements.length} elements for ${item.selector}`);
@@ -197,8 +205,6 @@ class draggable_elements {
       );
       const newDiv = document.createElement("div");
       newDiv.className = "ktwp-de-effectsDiv";
-      newDiv.style =
-        "position:absolute !important; left:0 !important;top:0 !important;bottom:0 !important;right:0 !important;background:transparent !important;filter:none !important;backdropFilter:none !important;border-radius:inherit;";
       theDragElement.prepend(newDiv);
       if (getComputedStyle(theDragElement).position == "static") {
         element.style.position =
